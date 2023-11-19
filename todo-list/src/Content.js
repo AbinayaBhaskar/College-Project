@@ -5,7 +5,7 @@ const Content = ({tasks,handleCheck,handleDelete}) => {
     <div>
         {(tasks.length>0)?(
        <ItemList
-       tasks={tasks}
+        tasks={tasks}
         handleCheck={handleCheck}
         handleDelete={handleDelete}/>
         ):(

@@ -4,6 +4,7 @@ import Content from './Content';
 import Footer from './Footer';
 import { useState } from 'react';
 import AddItem from './AddItem';
+import SearchItem from './SearchItem';
 
 function App() {
   const [tasks,setTask]=useState(
@@ -11,7 +12,7 @@ function App() {
    )
 
   const [newTask,setNewTask]=useState('')
-
+  const [search,setSearch]=useState('')
   const addItem=(item)=>{
     const getUniqueid = tasks.length ? tasks[tasks.length-1].id+1: 1;
     const addNewItem={id: getUniqueid,task: item,checked:false}
@@ -48,7 +49,7 @@ function App() {
     <div className="App">
       <Header title="Abinaya Todo List"/>
       <Content
-        tasks={tasks}
+        tasks={tasks.filter(item=>((item.task).toLowerCase()).includes((search).toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
@@ -56,6 +57,10 @@ function App() {
         newTask={newTask}
         setNewTask={setNewTask}
         handleSubmit={handleSubmit}
+      />
+      <SearchItem
+        search={search}
+        setSearch={setSearch}
       />
       <Footer
       length={tasks.length}

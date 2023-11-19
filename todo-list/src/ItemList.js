@@ -5,10 +5,11 @@ const ItemList = ({tasks,handleCheck,handleDelete}) => {
     <ul>
     {tasks.map((item)=>(
       <LineItem
-      tasks={item}
-      key={item.id}
-      handleCheck={handleCheck}
-      handleDelete={handleDelete}/>
+        tasks={item}
+        key={item.id}
+        handleCheck={handleCheck}
+        handleDelete={handleDelete}
+      />
     ))}
     </ul>
   )
