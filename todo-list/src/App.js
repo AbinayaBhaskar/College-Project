@@ -7,26 +7,7 @@ import AddItem from './AddItem';
 
 function App() {
   const [tasks,setTask]=useState(
-    [{
-       id:1,
-       task:"Read books",
-       checked:true
-     },
-     {
-       id:2,
-       task:"Wash clothes",
-       checked:false
-     },
-     {
-       id:3,
-       task:"Daily workout",
-       checked:false
-     },
-     {
-      id:4,
-      task:"Drink water",
-      checked:false
-    }]
+    JSON.parse(localStorage.getItem("todo"))
    )
 
   const [newTask,setNewTask]=useState('')
